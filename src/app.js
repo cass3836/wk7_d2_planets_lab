@@ -8,11 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
   console.log(planetsDataModel.planets);
   planetsDataModel.bindEvents();
 
-  const selectPlanet = document.querySelector('.planets-menu');
-  const selectPlanetDisplay = new SelectView(selectPlanet);
+  const selectElement = document.querySelector('.planets-menu');
+  const selectPlanetDisplay = new SelectView(selectElement);
+  // console.log(selectPlanetDisplay);
   selectPlanetDisplay.bindEvents();
 
   const planetInfo = document.querySelector('.planet-details');
   const planetInfoDisplay = new PlanetInfoView(planetInfo);
+  console.log(planetInfoDisplay);
   planetInfoDisplay.bindEvents();
 });
