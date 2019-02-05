@@ -7,14 +7,17 @@ const PlanetInfoView = function(section){
 PlanetInfoView.prototype.bindEvents = function(){
 PubSub.subscribe('SolarSystem:planet-info', (event) =>{
   console.log(event.detail);
-  // const planet = event.detail;
-  // this.show(planet);
+  const planet = event.detail;
+  this.show(planet);
 });
 };
 
 PlanetInfoView.prototype.show = function(planet){
-  console.log(planet);
-}
+  // console.log(planet);
+  const planetInfo = document.createElement('p');
+  planetInfo.textContent = `${planet.name}: Orbit: ${planet.orbit}`;
+  this.section.appendChild(planetInfo);
+};
 
 
 module.exports = PlanetInfoView;
